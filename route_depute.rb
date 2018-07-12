@@ -18,14 +18,14 @@ def deputy_scrap_url
     url_deputy = page.css("ul.col3 a")
 end
 
-#puts deputy_scrap_name
+#puts deputy_scrap_url
 
 #Methode globale
 def perform
   url_all = deputy_scrap_url #définit une variable = notre seconde méthode
   url_all.each do |url| #sur notre variable pour chaque élément "url" on va :
     puts url.text #afficher le texte de la balise soit le nom du ou de la député(e)
-    puts deputy_scrap_mail(url['href']) #on va appliquer la méthode mail sur chaque élément url en spécifiant qu'on veut récupérer l'url en remplaçant le "./" par la première partie de l'url commune à toutes les mairies pour qu'ensuite la méthode mail utilise cette url en paramètre
+    puts deputy_scrap_mail(url['href']) 
   end
 end
 
