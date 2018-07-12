@@ -22,10 +22,14 @@ end
 
 #Methode globale
 def perform
+  identity = []
+  contact = []
   url_all = deputy_scrap_url #définit une variable = notre seconde méthode
   url_all.each do |url| #sur notre variable pour chaque élément "url" on va :
-    puts url.text #afficher le texte de la balise soit le nom du ou de la député(e)
-    puts deputy_scrap_mail(url['href']) 
+     identity.push(url.text.split) #afficher le texte de la balise soit le nom puis le prénom du ou de la député(e)
+     contact.push(deputy_scrap_mail(url['href']))
+     hash = identity.zip(contact)
+     puts hash
   end
 end
 
