@@ -1,2 +1,2 @@
-/config/schedule.rb
-/gemfile/Gemfile.lock
+config/
+gemfile/Gemfile.lock
